@@ -6,7 +6,7 @@ import { Gallery } from "@/components/invite/Gallery";
 import { CalendarCard, Countdown, DressCode, Venue } from "@/components/invite/Reception";
 import { Guestbook } from "@/components/invite/Guestbook";
 import { DateBlock, Divider, FramedCard, MiniFlower, Reveal, SectionTitle } from "@/components/invite/Bits";
-import { MUSIC, TILE } from "@/components/invite/assets";
+import { TILE } from "@/components/invite/assets";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -69,7 +69,7 @@ function Index() {
     <main className="relative min-h-screen overflow-x-hidden" style={{ backgroundImage: `url(${TILE})`, backgroundSize: "420px", backgroundAttachment: "fixed" }}>
       <div className="pointer-events-none fixed inset-0 bg-background/35" />
       <Envelope onOpen={onOpen} />
-      <audio ref={audio} src={MUSIC} loop preload="auto" />
+      {/* <audio ref={audio} src={MUSIC} loop preload="auto" /> */}
 
       <div className={cn("relative space-y-28 px-6 pb-32 pt-16 sm:space-y-36 sm:pt-24", !opened && "h-screen overflow-hidden")}>
         {/* HERO */}
@@ -185,7 +185,7 @@ function Index() {
       </div>
 
       {opened && (
-        <button onClick={toggle} aria-label={playing ? "Pause music" : "Play music"}
+        // <button onClick={toggle} aria-label={playing ? "Pause music" : "Play music"}
           className={cn("fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-soft transition hover:scale-110", playing && "animate-pulse-ring")}>
           {playing ? <Pause className="h-5 w-5" /> : <Play className="ml-0.5 h-5 w-5" />}
         </button>
